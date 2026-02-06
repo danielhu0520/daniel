@@ -31,14 +31,20 @@ h1 {
   text-indent: -9999px;
   position: absolute;
   left: 200px;
-  top:10;
   line-height: 100px;
-  background-image:url(images/螢幕擷取畫面\ 2025-11-10\ 141520.png);
-  background-repeat: no-repeat;
   top: 5px;
   width: 100px;
-  text-indent: -9999;
 }
+
+/* 新增：讓 h1 裡面的連結 (a) 變成區塊並顯示背景圖 */
+h1 a {
+  display: block;       /* 讓連結變成區塊元素 */
+  width: 100%;          /* 填滿 h1 的寬度 */
+  height: 100px;        /* 設定高度，確保圖片顯示出來 */
+  background-image: url("images/螢幕擷取畫面 2025-11-10 141520.png"); /* 加上引號避免檔名空白問題 */
+  background-repeat: no-repeat;
+}
+
 *{
   padding:0;
   margin:0;
