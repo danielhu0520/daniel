@@ -30,7 +30,7 @@ header ul {
 h1 {
   text-indent: -9999px;
   position: absolute;
-  left: 120px;
+  left: 200px;
   top:10;
   line-height: 100px;
   background-image:url(images/螢幕擷取畫面\ 2025-11-10\ 141520.png);
@@ -106,4 +106,53 @@ h1 {
 }
 .興趣 p {
   color: black;
+}
+/* 漢堡按鈕的容器 */
+.menu-toggle {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    margin: 20px; /* 距離邊緣一點 */
+}
+
+/* 畫出那三條線 */
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #ffffff; /* 線的顏色 */
+    border-radius: 3px;
+}
+
+#hamburger-menu-links {
+    display: none;        /* 預設隱藏選單 */    
+}
+
+/* 當選單被加上 "active" class 時顯示出來 */
+#hamburger-menu-links.active {
+    display: block;
+    position: absolute;     /* 關鍵：絕對定位，讓它浮起來 */
+    top: 60px;              /* 距離頂部的高度，視你的導覽列高度調整 */
+    left: 10px;             /* 距離左邊的距離 */
+    width: 100px;           /* 設定一個固定寬度，不要讓它橫跨整個螢幕 */
+    background-color: rgba(0, 0, 0, 0.8); /* 半透明黑，更有質感 */
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 999; 
+    /* 1. 強制文字不換行，這是解決「自、我、介、紹」變成垂直排列的關鍵 */
+    white-space: nowrap; 
+
+    /* 2. 讓寬度剛好包住文字就好，不要強行撐開或縮小 */
+    width: min-content;
+    display: flex;
+    flex-direction: column; /* 讓子元素垂直排列 */
+}
+/* 原本就在上面的固定連結樣式 */
+.top-static-links {
+    display: flex; /* 讓它們排成一排 */
+    list-style: none;
+    gap: 20px; /* 連結之間的間距 */
 }

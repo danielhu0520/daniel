@@ -1,6 +1,6 @@
-let 考試成績 = [85, 92, 78, 90, 88];
-
-function 打招呼(姓名) {
-    console.log(`${姓名}你好!`);
+function toggleMenu() {
+    // 抓到選單元素
+    const menu = document.getElementById("hamburger-menu-links");
+    // 切換 "active" 這個 class (有的話就刪掉，沒有就加上去)
+    menu.classList.toggle("active");
 }
-打招呼("小明");
