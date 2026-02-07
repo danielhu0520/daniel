@@ -6,7 +6,7 @@ header {
 }
 
 
-p {
+header p {
   font-size: 18px;
   color: white;
 }
@@ -27,7 +27,7 @@ header ul {
   top: 0px;
   line-height: 100px;
 }
-h1 {
+header h1 {
   text-indent: -9999px;
   position: absolute;
   left: 200px;
@@ -37,11 +37,11 @@ h1 {
 }
 
 /* 新增：讓 h1 裡面的連結 (a) 變成區塊並顯示背景圖 */
-h1 a {
+header h1 a {
   display: block;       /* 讓連結變成區塊元素 */
   width: 100%;          /* 填滿 h1 的寬度 */
   height: 100px;        /* 設定高度，確保圖片顯示出來 */
-  background-image: url("images/螢幕擷取畫面 2025-11-10 141520.png"); /* 加上引號避免檔名空白問題 */
+  background-image: url("images/title.png"); /* 加上引號避免檔名空白問題 */
   background-repeat: no-repeat;
 }
 
@@ -161,4 +161,61 @@ h1 a {
     display: flex; /* 讓它們排成一排 */
     list-style: none;
     gap: 20px; /* 連結之間的間距 */
+    font-size: 18px;
+}
+
+/* 針對 page2.html 的內容區塊設定樣式 */
+.學習紀錄 {
+    padding-top: 120px; /* 重要：避免內容被上方固定的 header 擋住 */
+    padding-left: 10%;  /* 增加左右邊距，讓閱讀更舒適 */
+    padding-right: 10%;
+    background-image: url(images/—Pngtree—elegant\ black\ abstract\ overlapping\ background_15291283.jpg);
+}
+.學習紀錄 h1 {
+    color: white;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+.學習紀錄 p {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.學習紀錄 ul {
+    color: #ffffff;
+    font-size: 18px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+
+/* 針對影片連結的樣式 (黃色文字) */
+.學習紀錄 .video-link {
+    background-image: url(images/menu-bg.png);
+    text-decoration: underline;
+    display: block;       /* 讓連結變成區塊元素 */
+    width: 100%;          /* 填滿 h1 的寬度 */
+    height: 300px;  
+    background-repeat: no-repeat;   
+}
+.學習紀錄 .video-link2 {
+    background-image: url(images/javetube.png);
+    text-decoration: underline;
+    display: block;       /* 讓連結變成區塊元素 */
+    width: 100%;          /* 填滿 h1 的寬度 */
+    height: 300px;  
+    background-repeat: no-repeat;   
+}
+/* 針對作品按鈕的樣式 (白色按鈕) */
+.學習紀錄 .project-link {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 20px;
+    font-weight: bold;
+}
+.學習紀錄 .project-link:hover {
+    background-color: #ddd; /* 滑鼠移過去變灰色 */
 }
