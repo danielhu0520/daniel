@@ -76,6 +76,11 @@ header h1 a {
   border:1px solid #ACACAC;
   padding: 10px 20px;
   border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 加入平滑過渡效果 */
+}
+.news  a:hover {
+  transform: scale(1.05); /* 滑鼠滑過時稍微放大 1.05 倍 */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4); /* 增加陰影讓按鈕浮起來 */
 }
 .slogan {
   background-color: #485652;
@@ -169,6 +174,8 @@ header h1 a {
     padding-top: 120px; /* 重要：避免內容被上方固定的 header 擋住 */
     padding-left: 10%;  /* 增加左右邊距，讓閱讀更舒適 */
     padding-right: 10%;
+    background-size: cover;   /* 讓圖片填滿整個區塊 */
+    background-position: center; /* 讓圖片置中 */
     background-image: url(images/—Pngtree—elegant\ black\ abstract\ overlapping\ background_15291283.jpg);
 }
 .學習紀錄 h1 {
@@ -185,7 +192,7 @@ header h1 a {
     color: #ffffff;
     font-size: 18px;
     margin-left: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 /* 針對影片連結的樣式 (黃色文字) */
@@ -195,7 +202,16 @@ header h1 a {
     display: block;       /* 讓連結變成區塊元素 */
     width: 100%;          /* 填滿 h1 的寬度 */
     height: 300px;  
-    background-repeat: no-repeat;   
+    margin-bottom: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;   /* 讓圖片填滿整個區塊 */
+    background-position: center; /* 讓圖片置中 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 加入平滑過渡效果 */
+    border-radius: 20px; /* 圓角設定為 20px */
+}
+.學習紀錄 .video-link:hover {
+    transform: scale(1.02); /* 滑鼠滑過時稍微放大 1.02 倍 */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4); /* 增加陰影讓圖片浮起來 */
 }
 .學習紀錄 .video-link2 {
     background-image: url(images/javetube.png);
@@ -203,7 +219,16 @@ header h1 a {
     display: block;       /* 讓連結變成區塊元素 */
     width: 100%;          /* 填滿 h1 的寬度 */
     height: 300px;  
-    background-repeat: no-repeat;   
+    margin-bottom: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 20px; /* 圓角設定為 20px */
+}
+.學習紀錄 .video-link2:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
 }
 /* 針對作品按鈕的樣式 (白色按鈕) */
 .學習紀錄 .project-link {
