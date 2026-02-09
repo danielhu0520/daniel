@@ -3,6 +3,13 @@ header {
   height: 100px;
   width: 100%;
   position: fixed;
+  /* 加入 Flexbox 設定，讓內容自動排版 */
+  display: flex;
+  justify-content: space-between; /* 左右推開：Logo在左，選單在右 */
+  align-items: center; /* 垂直置中 */
+  padding: 0 20px; /* 左右留一點邊距 */
+  box-sizing: border-box; /* 確保 padding 不會撐大寬度 */
+  z-index: 1000; /* 確保導覽列在最上層 */
 }
 
 
@@ -18,14 +25,22 @@ header a:hover {
   text-decoration: underline;
 }
 header li {
+display: inline;
+margin-right: 20px;
   display: inline;
-  margin-right: 8vw;
+  /* margin-right: 20px;  移除舊的邊距，由 gap 控制 */
 }
 header ul {
   position: absolute;
-  right:50vw;
+  right: 800px;
   top: 0px;
   line-height: 100px;
+  /* 移除絕對定位，讓 Flexbox 自動處理位置 */
+  /* position: absolute; */
+  /* right: 800px; */
+  /* top: 0px; */
+  /* line-height: 100px; */
+  margin: 0; /* 清除預設邊距 */
 }
 header h1 {
   text-indent: -9999px;
@@ -33,7 +48,13 @@ header h1 {
   left: 200px;
   line-height: 100px;
   top: 5px;
+  text-indent: -9999px; /* 隱藏文字 */
+  /* 移除絕對定位 */
+  /* position: absolute; */
+  /* left: 200px; */
+  /* top: 5px; */
   width: 100px;
+  margin: 0; /* 清除邊距 */
 }
 
 /* 新增：讓 h1 裡面的連結 (a) 變成區塊並顯示背景圖 */
@@ -43,6 +64,18 @@ header h1 a {
   height: 100px;        /* 設定高度，確保圖片顯示出來 */
   background-image: url("images/title.png"); /* 加上引號避免檔名空白問題 */
   background-repeat: no-repeat;
+}
+
+/* 新增：讓第一個 nav (包含 Logo 和漢堡選單) 佔滿寬度並左右對齊 */
+header nav:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto; /* 改回 auto，讓它只佔據需要的寬度，不要佔滿整行 */
+}
+/* 隱藏第二個 nav (原本放電腦版連結的容器) */
+header nav:nth-child(2) {
+  display: block; /* 恢復顯示電腦版連結 */
 }
 
 *{
@@ -93,6 +126,7 @@ header h1 a {
 }
 .HCSH {
   display: flex;
+  /* 預設為橫向排列 (電腦版) */
 }
 .HCSH img {
   width:50%
@@ -127,6 +161,8 @@ header h1 a {
     justify-content: space-between;
     cursor: pointer;
     margin: 20px; /* 距離邊緣一點 */
+    /* margin: 20px;  由 header 的 padding 控制 */
+    display: flex; /* 電腦版預設隱藏漢堡按鈕 */
 }
 
 /* 畫出那三條線 */
@@ -161,12 +197,39 @@ header h1 a {
     display: flex;
     flex-direction: column; /* 讓子元素垂直排列 */
 }
+
+/* 針對漢堡選單內的連結樣式 */
+#hamburger-menu-links li {
+    list-style: none;
+    margin: 10px 0; /* 讓選項不要擠在一起 */
+}
+#hamburger-menu-links a {
+    display: block; /* 讓連結變成區塊，比較好點 */
+    transition: transform 0.3s ease; /* 加入平滑過渡效果 */
+}
+#hamburger-menu-links a:hover {
+    transform: scale(1.1); /* 滑鼠滑過時放大 */
+    text-decoration: none; /* 移除底線 */
+    font-weight: bold; /* 加粗 */
+}
+
 /* 原本就在上面的固定連結樣式 */
 .top-static-links {
-    display: flex; /* 讓它們排成一排 */
+    display: flex;
     list-style: none;
     gap: 20px; /* 連結之間的間距 */
     font-size: 18px;
+}
+
+/* 新增：針對電腦版連結的滑鼠互動效果 */
+.top-static-links a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+.top-static-links a:hover {
+    transform: scale(1.1);
+    font-weight: bold;
+    text-decoration: none;
 }
 
 /* 針對 page2.html 的內容區塊設定樣式 */
@@ -243,4 +306,51 @@ header h1 a {
 }
 .學習紀錄 .project-link:hover {
     background-color: #ddd; /* 滑鼠移過去變灰色 */
+}
+
+/* 技能展示區塊樣式 */
+.skills-container {
+    display: flex;
+    gap: 20px; /* 卡片之間的間距 */
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* 如果螢幕太小，自動換行 */
+    justify-content: center;
+}
+
+.skill-card {
+    background-color: #485652; /* 使用跟 slogan 一樣的深綠色 */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+/* --- RWD 響應式設計 (針對手機/平板) --- */
+@media (max-width: 768px) {
+    /* 1. 顯示漢堡按鈕 */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* 2. 隱藏原本的電腦版橫向選單 */
+    .top-static-links {
+        display: none;
+    }
+
+    /* 3. 調整自我介紹區塊 (.HCSH) 變成直向排列 */
+    .HCSH {
+        flex-direction: column;
+    }
+    .HCSH img {
+        width: 100%; /* 手機版圖片佔滿寬度 */
+        margin-bottom: 20px;
+    }
+
+    /* 4. 調整標題大小，避免手機上字太大 */
+    .news h2 {
+        font-size: 40px;
+        text-align: center;
+    }
 }
