@@ -380,8 +380,15 @@ footer a {
     width: 112px;
   }
 
+  header nav:first-child {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+  }
+
   .menu-toggle {
     display: flex;
+    margin-left: 0;
   }
 
   .top-static-links {
@@ -428,6 +435,8 @@ footer a {
 
   .video-link,
   .video-link2 {
-    aspect-ratio: 1294 / 295;
+    aspect-ratio: 16 / 9;
+    background-position: left center;
+    background-size: auto 100%;
   }
 }
