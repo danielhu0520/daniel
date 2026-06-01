@@ -439,4 +439,11 @@ footer a {
     background-position: left center;
     background-size: auto 100%;
   }
+
+  .video-link {
+    aspect-ratio: 366 / 205;
+    background-image: url("images/mobile-html-css.png");
+    background-position: center;
+    background-size: contain;
+  }
 }
