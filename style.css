@@ -139,7 +139,7 @@ header a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 86vh;
+  min-height: 100vh;
   padding: 130px 8% 70px;
   text-align: center;
 }
@@ -401,7 +401,7 @@ footer a {
   }
 
   .news {
-    min-height: 78vh;
+    min-height: 100vh;
     padding-top: 116px;
   }
 
